@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import avatar from '../assets/icons/avatar.png'
+import { logOut } from "../auth/firebase";
 
 const Navbar = () => {
   const currentUser= {displayName: "Mehmet"};
@@ -17,9 +18,7 @@ const Navbar = () => {
           {/* Right elements */}
           <div className="flex items-center relative">
             {/* Icon */}
-            {currentUser && <h5 className="mr-2 capitalize">{currentUser?.displayName}</h5> }
-
-
+            {currentUser && (<h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>) }
             <div className="dropdown relative">
               <span
                 className="dropdown-toggle flex items-center hidden-arrow"                
@@ -60,6 +59,7 @@ const Navbar = () => {
                   <span
                     className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
                     role="button"
+                    onClick={()=>logOut()}
                   >
                     Logout
                   </span>

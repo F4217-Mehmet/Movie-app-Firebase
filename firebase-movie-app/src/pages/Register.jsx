@@ -1,14 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import GoogleIcon from "../assets/icons/GoogleIcon";
 import { createUser } from "../auth/firebase";
 
 const Register = () => {
   //*ayrı state kullanımı====>
-
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate= useNavigate();
 
   // /*Tek state Kullanımıyla====>
   // const [info,setInfo] = useState({
@@ -16,11 +17,13 @@ const Register = () => {
   //   lastName: "",
   //   email: "",
   //   password: "",
-  // })
+  // });
 
   const handleSubmit = (e)=> {
     e.preventDefault();
-    createUser(email, password)
+    createUser(email, password, navigate("/"));
+    
+    console.log(firstName, lastName);
   };
 
   // const handleChange = (e) => setInfo({
