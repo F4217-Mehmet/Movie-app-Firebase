@@ -11,7 +11,6 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     signIn(email, password, navigate);
-
     console.log(email, password);
   };
 
@@ -76,7 +75,7 @@ const Login = () => {
             <input
               className="border-none outline-none bg-[#ff4b45] custom-input w-[100px] mt-[10px] rounded-[4px] font-[600] cursor-pointer"
               type="submit"
-              value="Register"
+              value="Sign in"
             />
             <button
               className="flex justify-between border-none outline-none bg-[#ff4b45] custom-input w-[300px] mt-[15px] rounded-[4px] font-[600] cursor-pointer"

@@ -21,8 +21,7 @@ const Register = () => {
 
   const handleSubmit = (e)=> {
     e.preventDefault();
-    createUser(email, password, navigate("/"));
-    
+    createUser(email, password, navigate);    
     console.log(firstName, lastName);
   };
 
