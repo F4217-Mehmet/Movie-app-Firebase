@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import avatar from '../assets/icons/avatar.png'
+import avatar from "../assets/icons/avatar.png";
 import { logOut } from "../auth/firebase";
 import { AuthContext } from "../context/AuthContextProvider";
+import Switch from "./Switch";
 
 const Navbar = () => {
-  const {currentUser} = useContext(AuthContext)
+  const { currentUser } = useContext(AuthContext);
   // const currentUser= {displayName: "Mehmet"};
   // const currentUser= false
   return (
@@ -19,10 +20,13 @@ const Navbar = () => {
           {/* Right elements */}
           <div className="flex items-center relative">
             {/* Icon */}
-            {currentUser && (<h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>)}
+            {currentUser && (
+              <h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>
+            )}
+            <Switch />
             <div className="dropdown relative">
               <span
-                className="dropdown-toggle flex items-center hidden-arrow"                
+                className="dropdown-toggle flex items-center hidden-arrow"
                 id="dropdownMenuButton2"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -61,7 +65,7 @@ const Navbar = () => {
                   <span
                     className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
                     role="button"
-                    onClick={()=>logOut()}
+                    onClick={() => logOut()}
                   >
                     Logout
                   </span>
