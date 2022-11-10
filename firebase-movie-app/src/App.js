@@ -5,10 +5,10 @@ import AppRouter from "./router/AppRouter";
 
 const App = () => {
   return (
-    <div className="bg-gray-100 dark:bg-[#23242a]">
+    <div className="dark:bg-[#23242a]">
       <AuthContextProvider>
         <AppRouter />
-        <ToastContainer/>
+        <ToastContainer />
       </AuthContextProvider>
     </div>
   );
